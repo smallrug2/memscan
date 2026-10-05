@@ -1,2 +1,29 @@
-# memscan
-Read-only process-memory float scanner with Windows (ctypes) and Linux (/proc) backends. Python, stdlib only.
+﻿Cross-Platform Memory Float Scanner (memscan.py)
+Coded by: Muse Spark (Meta AI assistant)
+Curated by: smallrug2
+License: MIT (see LICENSE file)
+
+
+## What it does
+Read-only process-memory scanner: find every address holding a float, then re-filter as the value changes (Windows ctypes + Linux /proc backends).
+
+
+## Requirements
+Python 3.8+ only - no extra packages needed (stdlib only).
+
+
+## How to run
+    python memscan.py --help
+    python memscan.py scan --proc notepad.exe --float 100.0 --out hits.bin
+    python memscan.py refilter --proc notepad.exe --float 150.0 --in hits.bin
+
+
+## Platform
+Windows + Linux: yes (native backend per OS). macOS: process lookup works,
+memory reading is unsupported (no /proc) - the script says so and exits cleanly.
+
+
+## Credits
+- Coded by Muse Spark (Meta AI assistant) for smallrug2's open-source collection.
+- If this script helped you, a star on the repo is appreciated.
+
